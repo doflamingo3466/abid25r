@@ -1,16 +1,36 @@
-# React + Vite
+# Counter Studio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A beginner-friendly React counter project.
 
-Currently, two official plugins are available:
+## Run it
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+Open the local address shown in the terminal.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Folder layout
 
-## Expanding the Oxlint configuration
+```text
+src/
+├── components/
+│   ├── Header.jsx
+│   ├── Footer.jsx
+│   ├── Counter.jsx
+│   └── Settings.jsx
+├── App.jsx
+├── main.jsx
+└── styles.css
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## What to explain
+
+- `useState` stores the counter and the two settings.
+- The functions in `App.jsx` update those state values.
+- `Counter` receives the number and button functions as props.
+- `Settings` receives the setting values and toggle functions as props.
+- `showInfo && (...)` shows the note only when `showInfo` is true.
+- `darkMode` changes the class on the main element.
+- `decreaseCount` checks the number before subtracting, so it cannot go below zero.
