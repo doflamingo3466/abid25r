@@ -1,84 +1,79 @@
 import { useState } from "react";
-import Header from "./components/Header";
-import Counter from "./components/Counter";
-import Settings from "./components/Settings";
-import Footer from "./components/Footer";
+import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
   const [showInfo, setShowInfo] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
 
-  function increaseCount() {
+  function increase() {
     setCount(count + 1);
   }
 
-  function decreaseCount() {
+  function decrease() {
     if (count > 0) {
       setCount(count - 1);
     }
   }
 
-  function resetCount() {
+  function reset() {
     setCount(0);
   }
 
-  function toggleInfo() {
-    setShowInfo(!showInfo);
-  }
-
-  function toggleTheme() {
-    setDarkMode(!darkMode);
-  }
-
   return (
-    <main className={darkMode ? "app dark" : "app"}>
-      <div className="page">
-        <Header />
+    <div className={darkMode ? "app dark" : "app"}>
+      <header>
+        <h2>
+          Counter<span>.</span>
+        </h2>
+        <p>REACT / 01</p>
+      </header>
 
-        <section className="intro">
-          <p className="eyebrow">REACT PRACTICE / 01</p>
-          <h1>Keep it simple<span>.</span></h1>
-          <p className="intro-text">
-            A small counter to practise React state and events.
-          </p>
-        </section>
+      <main>
+        <h1>
+          Simple things.
+          <br />
+          Smart interactions.
+        </h1>
 
-        <section className="dashboard">
-          <Counter
-            count={count}
-            onIncrease={increaseCount}
-            onDecrease={decreaseCount}
-            onReset={resetCount}
-          />
+        <div className="layout">
+          <section className="card counter">
+            <p>COUNTER</p>
+            <h2>{count}</h2>
 
-          <Settings
-            showInfo={showInfo}
-            darkMode={darkMode}
-            onToggleInfo={toggleInfo}
-            onToggleTheme={toggleTheme}
-          />
+            <div className="buttons">
+              <button onClick={increase}>Increase +</button>
+              <button onClick={decrease}>Decrease −</button>
+              <button onClick={reset}>Reset</button>
+            </div>
+          </section>
 
-          {showInfo && (
-            <section className="info-card">
-              <p className="eyebrow">A QUICK NOTE</p>
-              <h2>What is happening?</h2>
-              <p>
-                The buttons change state. React uses the new state to update
-                the screen automatically.
-              </p>
-              <div className="tags">
-                <span>useState</span>
-                <span>Events</span>
-                <span>React</span>
+          <section className="card settings">
+            <p>SETTINGS</p>
+
+            <button onClick={() => setShowInfo(!showInfo)}>
+              {showInfo ? "Hide Information" : "Show Information"}
+            </button>
+
+            <button onClick={() => setDarkMode(!darkMode)}>
+              {darkMode ? "Light Mode" : "Dark Mode"}
+            </button>
+
+            {showInfo && (
+              <div className="info">
+                <h3>About</h3>
+                <p>A simple application built with React state and events.</p>
               </div>
-            </section>
-          )}
-        </section>
+            )}
+          </section>
+        </div>
+      </main>
 
-        <Footer />
-      </div>
-    </main>
+      <footer>
+        <p>MADE WITH REACT</p>
+        <p>2026</p>
+      </footer>
+    </div>
   );
 }
 

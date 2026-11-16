@@ -1,8 +1,14 @@
+
 function Footer() {
   return (
     <footer className="footer">
-      <span>MADE TO LEARN</span>
-      <span>LESS, BUT BETTER.</span>
+
+      <span>DESIGNED TO LEARN</span>
+
+      <span>KEEP IT CLEAR. KEEP IT SIMPLE.</span>
+
+      <span>2026 / 001</span>
+
     </footer>
   );
 }

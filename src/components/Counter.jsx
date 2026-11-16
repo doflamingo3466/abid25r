@@ -1,18 +1,27 @@
+
 function Counter({ count, onIncrease, onDecrease, onReset }) {
   return (
     <section className="card counter-card">
+
       <div className="card-heading">
         <p className="eyebrow">01 / COUNTER</p>
-        <span className="live"><span></span> LIVE</span>
+        <span className="live">● RUNNING</span>
       </div>
 
-      <p className="small-label">CURRENT NUMBER</p>
-      <h2 className="number">{count}</h2>
-      <p className="hint">
-        {count === 0 ? "Your count starts here." : "Nice and steady."}
-      </p>
+      <div className="number-area">
+
+        <p className="small-label">CURRENT VALUE</p>
+
+        <h2 className="number">{count}</h2>
+
+        <p className="hint">
+          A number that moves when you do.
+        </p>
+
+      </div>
 
       <div className="buttons">
+
         <button className="button primary" onClick={onIncrease}>
           + Increase
         </button>
@@ -26,9 +35,11 @@ function Counter({ count, onIncrease, onDecrease, onReset }) {
         </button>
 
         <button className="reset-button" onClick={onReset}>
-          Reset number ↺
+          Reset counter ↺
         </button>
+
       </div>
+
     </section>
   );
 }
