@@ -26,15 +26,11 @@ function App() {
         <h2>
           Counter<span>.</span>
         </h2>
-        <p>REACT / 01</p>
+        <p>REACT</p>
       </header>
 
       <main>
-        <h1>
-          Simple things.
-          <br />
-          Smart interactions.
-        </h1>
+        
 
         <div className="layout">
           <section className="card counter">
